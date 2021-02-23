@@ -52,7 +52,7 @@ public class Test {
                 System.out.println("Enter the Weight in Pounds");
                 cur.setWeight_pd(sc.nextDouble());
                 
-                p.newVitalSign(cur);
+                cur=p.newVitalSign(cur);
                 
                 System.out.println("Press 1 to enter new vital sign or any other number to exit the current vital signs section");
                 int nn=sc.nextInt();

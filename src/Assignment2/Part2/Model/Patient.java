@@ -26,7 +26,7 @@ public class Patient {
         return vitals;
     }
 
-    public void newVitalSign(VitalSigns vs) {
+    public VitalSigns newVitalSign(VitalSigns vs) {
         if(vitals.isEmpty() && n==0){
             this.current=vs;
             n=1;
@@ -35,6 +35,7 @@ public class Patient {
             this.vitals.add(this.current);
             this.current=vs;
         }
+        return vs;
     }
 
     public VitalSigns getCurrent() {
