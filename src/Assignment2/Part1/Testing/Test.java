@@ -21,11 +21,14 @@ public class Test {
         
         ArrayList<Patient> p = new ArrayList<>();
         
-        for(int i=0;i<5;i++){
+        while(true){
             Patient p1;
-            System.out.println("Enter the Patient's age");
-            p1= new Patient(sc.nextDouble());
-            
+            System.out.println("Enter the Patient's age or -1 to exit");
+            double nu=sc.nextDouble();
+            p1= new Patient(nu);
+            if(nu == -1){
+                break;
+            }
             VitalSigns vs=p1.getVs();
             
             System.out.println("Enter the Patient's Respiratory Rate");
@@ -46,10 +49,10 @@ public class Test {
             p.add(p1);
             //break;
         }
-        
-        for(int i=0;i<5;i++){
-            Patient pp=p.get(i);
-            System.out.println("For "+(i+1)+" patient, Vital Signs condition: "+pp.isPatientNormal());
+        int i=1;
+        for(Patient pp:p){
+            
+            System.out.println("For "+(i++)+" patient, Vital Signs condition: "+pp.isPatientNormal());
             //break;
         }
     }
